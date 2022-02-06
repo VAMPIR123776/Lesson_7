@@ -1,0 +1,24 @@
+package Lesson_7;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Cat[] allcat = new Cat[2];
+        allcat[0] = new Cat("Оди", 10);
+        allcat[1] = new Cat("Барсик", 15);
+
+        Plate plate = new Plate(20);
+        System.out.println(plate);
+        for (Cat i: allcat) {
+            System.out.println(i.hungry()); {
+                if (!plate.checkFood(i.getAppetite())) {
+                    plate.addFood();
+                }
+                i.eat(plate);
+                System.out.println("Кот " + i.getName() + " поел");
+                System.out.println(plate);
+                System.out.println(i.hungry());
+            }
+        }
+    }
+}
